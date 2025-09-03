@@ -1,9 +1,12 @@
 {
   "name": "keymesh",
-  "main": "index.js",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node main.js"
+    "clean": "rimraf dist",
+    "build": "npm run clean && npx tsc",
+    "start": "npm run build && node dist/app.js",
+    "dev": "npm run start"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +18,7 @@
     "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
     "nodemon": "^3.1.10",
+    "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   }
