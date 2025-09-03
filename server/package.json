@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "npm run clean && npx tsc",
+    "build": "npm run clean && npx tsc ",
     "start": "npm run build && node dist/app.js",
     "dev": "npm run start"
   },
@@ -12,11 +12,18 @@
   "license": "ISC",
   "description": "验证网格",
   "dependencies": {
-    "express": "^5.1.0"
+    "cfonts": "^3.3.0",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.4",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.26",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
+    "cpx": "^1.2.1",
     "nodemon": "^3.1.10",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
