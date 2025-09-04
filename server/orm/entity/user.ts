@@ -1,23 +1,29 @@
 import "reflect-metadata";
+import {role} from "./relationship.js"
 
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
 
+
 @Entity()
-export class User {
+export class user {
   // 数据库ID
   @PrimaryGeneratedColumn()
   id: number = 0; 
 
   // 用户可见ID
-  @Column({ type: "varchar", length: 16 })
+  @Column({ type: "varchar", length: 16,nullable: false  })
   uid: string = ""  ;
 
   // 用户名
-  @Column({ type: "varchar", length: 30 })
+  @Column({ type: "varchar", length: 30,nullable: false  })
   name: string = "";
 
+  // 角色
+  @Column({ type: "enum",  enum: role,  default: role.user,nullable: false })
+  role: role = role.user;
+
   // 密码
-  @Column({ type: "varchar", length: 100 })
+  @Column({ type: "varchar", length: 100 ,nullable: false })
   password: string = "";
 
   // 手机号
@@ -37,7 +43,7 @@ export class User {
   githubId: string | null = null;
 
   // 最新活跃时间
-  @Column({ type: "datetime", nullable: true })
+  @Column({ type: "datetime", nullable: false})
   lastLoginAt?: Date;
 
   // 创建时间

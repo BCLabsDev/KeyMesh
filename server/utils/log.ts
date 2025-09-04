@@ -1,7 +1,7 @@
 import winston from "winston";
 
 const logger = winston.createLogger({
-  level: process.env.Log_Level!,
+  level: process.env.LOG_LEVEL!,
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.printf(

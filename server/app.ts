@@ -5,7 +5,7 @@ import { InitDBClient } from "./orm/client.js";
 import express from "express";
 
 const app = express();
-const port = 8000;
+const port = process.env.WEB_PORT;
 
 try {
     await InitDBClient()
