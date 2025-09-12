@@ -82,10 +82,6 @@ func initDBWithRetry() {
 			log.Fatalf("数据库表创建失败: %v", err)
 		}
 	}
-
-	if !fiber.IsChild() {
-		log.Println("数据库连接成功")
-	}
 }
 
 // 健康检查goroutine

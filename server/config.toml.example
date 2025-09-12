@@ -3,8 +3,21 @@
 level = 1 # info
 
 [db]
-host = "localhost"
+# mysql client info
+host = "127.0.0.1"
 port = 3306
-user = "root"
-pass = "root"
+user = "keymesh"
+pass = "keymesh"
 name = "keymesh"
+
+[cache]
+# redis client info
+host = "127.0.0.1"
+port = 6379
+
+[stmp]
+# smtp client info
+host = "xxx.com"
+port = 0
+email = "xxx@xxx.com"
+pass = "pass"

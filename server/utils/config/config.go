@@ -19,7 +19,21 @@ var (
 	DB_Name = ""
 )
 
-// config 结构体映射 TOML
+// Cache
+var (
+	Cache_Host = ""
+	Cache_Port = 0
+)
+
+// SMTP
+var (
+	SMTP_Host  = ""
+	SMTP_Prot  = 0
+	SMTP_Email = ""
+	SMTP_Pass  = ""
+)
+
+// Config 结构体映射 TOML
 type config struct {
 	Log struct {
 		Level int `toml:"level"`
@@ -31,6 +45,16 @@ type config struct {
 		Pass string `toml:"pass"`
 		Name string `toml:"name"`
 	} `toml:"db"`
+	Cache struct {
+		Host string `toml:"host"`
+		Port int    `toml:"port"`
+	} `toml:"cache"`
+	SMTP struct {
+		Host  string `toml:"host"`
+		Port  int    `toml:"port"`
+		Email string `toml:"email"`
+		Pass  string `toml:"pass"`
+	} `toml:"smtp"`
 }
 
 func init() {
@@ -47,4 +71,14 @@ func init() {
 	DB_Name = cfg.DB.Name
 	DB_User = cfg.DB.User
 	DB_Pass = cfg.DB.Pass
+
+	// Cache
+	Cache_Host = cfg.Cache.Host
+	Cache_Port = cfg.Cache.Port
+
+	// SMTP
+	SMTP_Email = cfg.SMTP.Email
+	SMTP_Host = cfg.SMTP.Host
+	SMTP_Prot = cfg.SMTP.Port
+	SMTP_Pass = cfg.SMTP.Pass
 }

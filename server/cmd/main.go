@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "keymesh/cache"
 	_ "keymesh/dao"
 
 	"github.com/goccy/go-json"
