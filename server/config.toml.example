@@ -1,0 +1,10 @@
+[log]
+# 0-7 Trace-Panic
+level = 1 # info
+
+[db]
+host = "localhost"
+port = 3306
+user = "root"
+pass = "root"
+name = "keymesh"
